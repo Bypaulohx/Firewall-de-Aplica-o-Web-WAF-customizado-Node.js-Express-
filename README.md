@@ -1,2 +1,23 @@
-# Firewall-de-Aplica-o-Web-WAF-customizado-Node.js-Express-
-WAF (Web Application Firewall) customizado em Node.js + Express. Middleware que inspeciona e bloqueia tráfego malicioso (SQLi, XSS, Path Traversal, User-Agents suspeitos, IP blacklist/whitelist, rate limiting). Inclui logs, testes automatizados, Docker e documentação.
+# WAF Express — Firewall de Aplicação Web (Customizado)
+
+Projeto demonstrativo de um WAF (Web Application Firewall) customizado implementado como middleware para Express (Node.js).
+
+## Instalação
+```bash
+git clone <seu-repo>
+cd waf-express
+npm install
+cp .env.example .env
+npm run dev
+```
+
+# Documentação — WAF Express
+
+## Arquitetura
+```mermaid
+flowchart LR
+  Client[Cliente] --> LB[Load Balancer] --> WAF_MW[WAF Middleware]
+  WAF_MW --> App[Express App / Rotas]
+  App --> Services[(DB / APIs)]
+  WAF_MW --> Logs[WAF Logs]
+```
